@@ -3,7 +3,7 @@ For playing and testing.
 
 Custom Yocto layer (meta-tinyqpi) for the Raspberry Pi 4B and (later) Raspberry Pi Zero 2W.
 
-Yocto version: **Kirkstone**
+Yocto version: **Nanbield**
 
 ## Dependencies
 

@@ -14,5 +14,7 @@ BBLAYERS ?= " \
   /home/qylee/yocto_pi/TinyQPi/meta-openembedded/meta-networking \
   /home/qylee/yocto_pi/TinyQPi/meta-openembedded/meta-multimedia \
   /home/qylee/yocto_pi/TinyQPi/meta-raspberrypi \
+  /home/qylee/yocto_pi/TinyQPi/meta-clang \
+  /home/qylee/yocto_pi/TinyQPi/meta-browser/meta-chromium \
   /home/qylee/yocto_pi/TinyQPi/meta-tinyqpi \
   "
