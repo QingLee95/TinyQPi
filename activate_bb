@@ -1,8 +1,10 @@
 #!/bin/bash
 
-export TEMPLATECONF=$(pwd)/TinyQPi/meta-tinyqpi/conf/templates
+export TEMPLATECONF=$(pwd)/TinyQPi/meta-tinyqpi/conf/templates/tinyqpi
 source $(pwd)/TinyQPi/poky/oe-init-build-env build
 
-rm -rf ./conf/bblayers.conf ./conf/local.conf
-ln -s $TEMPLATECONF/bblayers.conf.sample ./conf/bblayers.conf
-ln -s $TEMPLATECONF/local.conf.sample ./conf/local.conf
+if [[ ! -L "./conf/bblayers.conf" ]]; then
+    rm -rf ./conf/bblayers.conf ./conf/local.conf
+    ln -s $TEMPLATECONF/bblayers.conf.sample ./conf/bblayers.conf
+    ln -s $TEMPLATECONF/local.conf.sample ./conf/local.conf
+fi

@@ -1,5 +1,11 @@
 # Disable connman for interface eth0 to prevent DHCP for that interface
 # Interface eth0 is set statically by ifupdown
+
+# File in this path needs to be added in order for it to find it
+FILESEXTRAPATHS:prepend:static_eth0 := "${THISDIR}/${PN}:"
+#Override main.conf in lower layer
+SRC_URI:prepend:static_eth0 = "file://main.conf "
+
 do_install:append:static_eth0() {
     mkdir -p ${D}${sysconfdir}/connman
     cp ${S}/main.conf ${D}${sysconfdir}/connman/main.conf
