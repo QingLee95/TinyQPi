@@ -18,6 +18,7 @@
 
 # This sets the default machine to be qemux86-64 if no other machine is selected:
 MACHINE = "raspberrypi4-64"
+MACHINE_FEATURES:remove = "touchscreen qemu-usermode"
 
 #https://meta-raspberrypi.readthedocs.io/en/latest/ipcompliance.html#linux-firmware-rpidistro
 LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
@@ -30,11 +31,9 @@ VIRTUAL-RUNTIME_dev_manager = "busybox-mdev"
 
 # Remove Avahi daemon (Distro features has to be defined in local.conf)
 # Remove X11 as this is a wayland only distro
-DISTRO_FEATURES:remove = "zeroconf x11"
+DISTRO_FEATURES:remove = "zeroconf x11 vulkan"
 
 DISTRO_FEATURES:append = " wayland"
-# Weston (or another window manager) is needed to run GUI apps
-CORE_IMAGE_EXTRA_INSTALL += "wayland weston"
 
 # Enable static ip on eth0
 DISTROOVERRIDES:append = ":static_eth0"

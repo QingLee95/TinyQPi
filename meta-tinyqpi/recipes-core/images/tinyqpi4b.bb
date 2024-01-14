@@ -13,7 +13,7 @@ IMAGE_INSTALL:append = "\
     pi-blaster \
     connman \
     connman-client \
-    chromium-ozone-wayland \
+    piosk \
 "
 
 RRECOMMENDS:${PN} = "\
