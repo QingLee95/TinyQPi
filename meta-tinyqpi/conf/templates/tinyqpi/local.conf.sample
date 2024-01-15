@@ -27,7 +27,6 @@ ENABLE_UART = "1"
 
 # Use busybox init
 VIRTUAL-RUNTIME_init_manager = "busybox"
-VIRTUAL-RUNTIME_dev_manager = "busybox-mdev"
 
 # Remove Avahi daemon (Distro features has to be defined in local.conf)
 # Remove X11 as this is a wayland only distro

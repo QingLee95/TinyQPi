@@ -24,7 +24,7 @@ case "$1" in
 	      sleep 5
             wayland_display=$(ls /run/user/$(id -u ${WESTON_USER})/ | grep  '^wayland-[0-9]$' | head -n 1)
 	done
-	su -c "XDG_RUNTIME_DIR=/run/user/$(id -u ${WESTON_USER}) WAYLAND_DISPLAY=$wayland_display chromium --kiosk --hide-scrollbars --enable-gpu $2" $WESTON_USER &
+	su -c "XDG_RUNTIME_DIR=/run/user/$(id -u ${WESTON_USER}) WAYLAND_DISPLAY=$wayland_display chromium --kiosk --hide-scrollbars --no-first-run $2" $WESTON_USER &
   ;;
 
   stop)
